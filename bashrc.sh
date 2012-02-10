@@ -23,7 +23,7 @@ export HISTSIZE=10000
 export HISTIGNORE="ls:exit:[bf]g"
 
 # import functions and aliases in bash subfolder
-for f in `pwd`/bash/*; do source $f; done
+for f in $HOME/config/bash/*; do source $f; done
 
 # append commands to the history file, rather than overwritingp
 shopt -s histappend
