@@ -19,6 +19,10 @@ function notify {
     fi
 }
 
+function add {
+    awk '{ sum+=$1 } END { print sum }'
+}
+
 export HISTSIZE=10000
 export HISTIGNORE="ls:exit:[bf]g"
 
