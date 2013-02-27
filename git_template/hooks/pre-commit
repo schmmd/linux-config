@@ -1,0 +1,29 @@
+#!/bin/sh
+
+git stash -q --keep-index
+
+git diff --cached | grep "^\\+.*println.*$" > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+  # println's found!
+  echo "You are trying to commit code that includes printlns."
+  echo
+  git diff --cached --diff-filter=A | grep "^\\+.*println.*$"
+  echo
+  echo "To override this, run git commit with the --no-verify option."
+  exit 1
+fi
+
+git diff --cached --name-only | xargs grep "^.*\\s" > /dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+  # trailing spaces found!
+  echo "You are trying to commit changes in files that includes trailing spaces."
+  echo
+  git diff --cached --name-only | xargs grep "^.*\\s$"
+  echo
+  echo "To override this, run git commit with the --no-verify option."
+  exit 1
+fi
+
+exit 0
+
+git stash pop -q
