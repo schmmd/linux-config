@@ -23,6 +23,8 @@ function add {
     awk '{ sum+=$1 } END { print sum }'
 }
 
+alias fn='find -name'
+
 export HISTSIZE=10000
 export HISTIGNORE="ls:exit:[bf]g"
 
@@ -31,5 +33,8 @@ for f in $HOME/config/bash/*; do source $f; done
 
 # append commands to the history file, rather than overwritingp
 shopt -s histappend
+
 # save each command right when it is executed, not at the end of the session
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+export PS1="[\u@\h \W]\$(__git_ps1)\$ "
