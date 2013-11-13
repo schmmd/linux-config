@@ -1,7 +1,7 @@
 export MODKEY=Mod1
 
 export WMII_FONT='-*-fixed-medium-r-*-*-18-*-*-*-*-*-*-*'
-export WMII_TERM="xterm -class UXTerm -title uxterm -u8"
+export WMII_TERM="uxterm"
 
 # Tagging Rules
 wmiir write /tagrules <<!
