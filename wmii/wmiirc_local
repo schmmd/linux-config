@@ -1,1 +1,24 @@
-MODKEY=Mod1
+export MODKEY=Mod1
+
+export WMII_FONT='-*-fixed-medium-r-*-*-18-*-*-*-*-*-*-*'
+export WMII_TERM="xterm -class UXTerm -title uxterm -u8"
+
+# Tagging Rules
+wmiir write /tagrules <<!
+/OpenParse.*/ -> ~
+/OpenOffice.org.*/ -> office
+/rdesktop.*/ -> remote
+/skype.*/ -> messaging
+/Quod.*/ -> audio
+/Hugin.*/ -> hugin
+/Gimp.*/ -> gimp
+/(Namoroka|Chromium).*/ -> internet
+/.*Eclipse.*/ -> ide
+/(Lanikai).*/ -> email
+/VirtualBox.*/ -> virtual
+/VMware.*/ -> virtual
+/feh.*/ -> ~
+/MPlayer.*/ -> ~
+/.*/ -> sel
+/.*/ -> 1
+!
