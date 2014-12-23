@@ -21,3 +21,11 @@ Add the following to your `~/.bashrc`.
 ```
 source $HOME/config/bashrc.sh
 ```
+
+# Git Templates
+
+To set up git hooks that are used by all your repositories, run the following.
+
+```bash
+git config --global init.templatedir '~/config/git_template'
+```
