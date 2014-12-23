@@ -27,8 +27,8 @@ alias fn='find -name'
 
 # Amazon EC2
 EC2_KEYS="$HOME/keys/aws-dev-keypair.pem"
-alias ec2sh='ssh -i "$EC2_KEYS" -l ec2-user'
-alias ec2cp='scp -i "$EC2_KEYS" -o "User ec2-user"'
+alias ec2ssh='ssh -i "$EC2_KEYS" -l ec2-user'
+alias ec2scp='scp -i "$EC2_KEYS" -o "User ec2-user"'
 
 export HISTSIZE=10000
 export HISTIGNORE="ls:exit:[bf]g"
